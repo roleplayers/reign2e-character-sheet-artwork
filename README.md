@@ -1,82 +1,210 @@
 # Reign 2e Character Sheet Artwork
 
-Custom artwork and visual assets for the Reign 2e Foundry VTT system, inspired by Game of Thrones medieval aesthetic with clean, simple design principles.
+**Game of Thrones inspired medieval theme** for Reign 2e Foundry VTT system.
 
-## Theme
+![Theme Preview](https://img.shields.io/badge/Style-Medieval_Fantasy-8b0000?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Complete-2d5016?style=for-the-badge)
 
-**Medieval Fantasy** - Dark, elegant, and functional. Think Game of Thrones meets simplified RPG design.
+## 🏰 Theme Overview
 
-### Design Principles
+This artwork collection transforms the Reign 2e character sheet into an elegant medieval fantasy experience inspired by Game of Thrones aesthetics while maintaining excellent readability and functionality.
 
-- **Simplicity**: Clean lines, readable fonts, minimal clutter
-- **Medieval Elements**: Celtic knots, crowns, swords, heraldic designs
-- **Muted Colors**: Parchment backgrounds, dark borders, metallic accents
-- **Functionality**: Art supports readability, doesn't distract
+### Design Philosophy
 
-## Assets
+- **Medieval Elegance**: Dark leather headers, parchment backgrounds, gold accents
+- **Readability First**: Clean typography, high contrast, organized layout
+- **Functional Beauty**: Art enhances usability, never distracts
+- **Simplified Complexity**: Rich visual language without overwhelming detail
+
+## 🎨 Visual Elements
+
+### Color Palette
+
+```css
+Parchment:      #f4e9d8  /* Main background */
+Dark Brown:     #2c1810  /* Borders and text */
+Gold:           #d4af37  /* Accents and highlights */
+Blood Red:      #8b0000  /* Primary accent */
+Steel Gray:     #5a6169  /* Secondary elements */
+Dark Green:     #2d5016  /* Success states */
+Leather:        #3d2817  /* Header background */
+```
+
+### Typography
+
+- **Headers**: [Cinzel](https://fonts.google.com/specimen/Cinzel) - Elegant serif with medieval feel
+- **Body Text**: [Crimson Text](https://fonts.google.com/specimen/Crimson+Text) - Readable serif
+- **Loaded via Google Fonts** (no local files needed)
+
+## 📁 Assets
 
 ### Body Silhouette (`body-silhouette.svg`)
 
-- Human figure for hit location reference
-- Front-facing male silhouette
-- Clearly marked hit zones:
-  - **10**: Head
-  - **7-9**: Torso
-  - **5-6**: Right Arm
-  - **3-4**: Left Arm
-  - **2**: Right Leg
-  - **1**: Left Leg
+Human figure for hit location reference with labeled zones:
 
-### Border Ornaments
+- **10**: Head
+- **7-9**: Torso  
+- **5-6**: Right Arm
+- **3-4**: Left Arm
+- **2**: Right Leg
+- **1**: Left Leg
 
-- `border-top.svg` - Top decorative border with crown motif
-- `border-corner.svg` - Corner ornaments (Celtic knots)
-- `divider-horizontal.svg` - Section dividers
+**Usage**: Appears as watermark behind hit locations in Combat tab.
 
-### Backgrounds
+### Decorative Elements
 
-- `parchment-texture.png` - Subtle parchment background
-- `leather-texture.png` - Dark leather texture for headers
+- `border-ornament.svg` - Celtic knots and crown motifs for headers
+- `divider-sword.svg` - Elegant section dividers
+- `icon-damage.svg` - Blood drop icon for damage tracking
 
-### Icons
+### Theme Stylesheet
 
-- `sword-icon.svg` - Combat section
-- `shield-icon.svg` - Defense/armor
-- `scroll-icon.svg` - Skills/abilities
-- `crown-icon.svg` - Character identity
+`theme.css` - Complete standalone theme (can be used independently)
 
-## Usage in Foundry VTT
+## ⚙️ Integration
+
+This theme is **already integrated** into the [Reign 2e system](https://github.com/roleplayers/reign2e). No manual installation required!
+
+### What's Applied
+
+✅ Parchment texture background  
+✅ Leather header with gold borders  
+✅ Medieval scroll-style tabs  
+✅ Illuminated manuscript stats  
+✅ Body silhouette in hit locations  
+✅ Steel button styling  
+✅ Custom scrollbars  
+✅ Gold highlight effects  
+
+## 🖼️ Features
+
+### Character Sheet Header
+
+- Dark leather gradient background
+- Gold border accent lines
+- Cinzel font for character name
+- Profile image with ornate gold frame
+- XP tracker with medieval styling
+
+### Stats & Skills
+
+- Illuminated manuscript style stat groups
+- Gold decorative lines
+- Blood red stat names in Cinzel font
+- Large, readable stat values
+- Skills with hover effects (gold highlight)
+- Custom skills highlighted in green
+- Expert/Master dice badges (purple/orange)
+
+### Hit Locations
+
+- Body silhouette watermark (8% opacity)
+- Medieval card layout for each location
+- Damage boxes:
+  - **Empty**: Parchment background
+  - **Shock**: Gold gradient
+  - **Killing**: Blood red gradient
+- Hover effects with red glow
+- AR/HAR armor inputs
+
+### Interactive Elements
+
+- Clickable stat names roll dice
+- Clickable skill names roll dice
+- Damage boxes cycle: empty → shock → killing → empty
+- Selected dice glow with gold shadow
+
+## 🎯 Design Inspirations
+
+### Lord of the Rings RPG
+
+- Clean, uncluttered layout
+- Parchment aesthetic
+- Readable fonts
+- Functional organization
+
+### Original Reign Character Sheet
+
+- Body silhouette for hit locations
+- Grid-based skill layout
+- Clear damage tracking
+
+### Game of Thrones
+
+- Dark, dramatic color scheme
+- Medieval heraldry elements
+- Blood red accents
+- Steel and leather textures
+
+## 🔧 Customization
+
+To modify the theme, edit `reign2e/css/reign2e.css`:
+
+### Change Primary Color
 
 ```css
-/* Apply parchment background to character sheet */
-.reign2e.sheet {
-  background-image: url('systems/reign2e/assets/parchment-texture.png');
-  background-size: cover;
-}
-
-/* Add border ornaments to header */
-.reign2e.sheet .sheet-header {
-  border-image: url('systems/reign2e/assets/border-top.svg') 30 round;
+:root {
+  --reign-accent: #8b0000; /* Change to your preferred color */
 }
 ```
 
-## Color Palette
+### Adjust Background
 
-```
-Parchment:    #f4e9d8
-Dark Brown:   #2c1810
-Gold:         #d4af37
-Blood Red:    #8b0000
-Steel Gray:   #5a6169
-Dark Green:   #2d5016
+```css
+.reign2e.sheet .window-content {
+  background-color: #f4e9d8; /* Lighter or darker parchment */
+}
 ```
 
-## License
+### Modify Fonts
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=YourFont&display=swap');
+
+.stat-name {
+  font-family: 'YourFont', serif;
+}
+```
+
+## 📋 Technical Details
+
+- **SVG Format**: Scalable, crisp at any resolution
+- **CSS Variables**: Easy theme customization
+- **Google Fonts**: No local font files needed
+- **Semantic Classes**: Maintainable, logical structure
+- **Z-index Layers**: Proper stacking context
+- **Responsive**: Adapts to different sheet sizes
+
+## 🚀 Future Enhancements
+
+- [ ] Animated hit location highlights
+- [ ] Seasonal theme variants (winter, summer)
+- [ ] House sigil placeholders
+- [ ] Ornamental stat borders
+- [ ] Illuminated capital letters for sections
+- [ ] Wax seal graphics for tabs
+
+## 📜 Credits
+
+- **System**: Reign 2nd Edition by Greg Stolze
+- **Artwork**: Custom SVG assets for Foundry VTT
+- **Fonts**: [Cinzel](https://fonts.google.com/specimen/Cinzel) by Natanael Gama, [Crimson Text](https://fonts.google.com/specimen/Crimson+Text) by Sebastian Kosch
+- **Inspiration**: Lord of the Rings RPG (Free League), Game of Thrones, Original Reign character sheet
+
+## 📄 License
 
 These assets are provided for use with the Reign 2e Foundry VTT system.
 
-## Credits
+- SVG assets: Free to use and modify
+- Theme CSS: Free to use and modify
+- Please credit if reusing in other projects
 
-- Original Reign 2e by Greg Stolze
-- Artwork created for Foundry VTT implementation
-- Inspired by medieval heraldry and Game of Thrones aesthetics
+## 🔗 Links
+
+- [Reign 2e System Repository](https://github.com/roleplayers/reign2e)
+- [Foundry VTT](https://foundryvtt.com/)
+- [Original Reign RPG](http://www.gregstolze.com/reign/)
+
+---
+
+*Made with ⚔️ for Reign 2e players*
