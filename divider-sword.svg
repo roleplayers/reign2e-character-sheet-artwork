@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="40" viewBox="0 0 400 40" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .sword { fill: #5a6169; stroke: #2c1810; stroke-width: 1; }
+      .line { stroke: #2c1810; stroke-width: 1; opacity: 0.3; }
+    </style>
+  </defs>
+  
+  <!-- Left line -->
+  <line x1="10" y1="20" x2="160" y2="20" class="line"/>
+  
+  <!-- Sword -->
+  <g transform="translate(200, 20)">
+    <!-- Blade -->
+    <polygon points="0,-15 2,-15 3,10 -3,10 -2,-15" class="sword"/>
+    <!-- Crossguard -->
+    <rect x="-8" y="10" width="16" height="2" class="sword"/>
+    <!-- Grip -->
+    <rect x="-2" y="12" width="4" height="8" class="sword"/>
+    <!-- Pommel -->
+    <circle cx="0" cy="22" r="3" class="sword"/>
+  </g>
+  
+  <!-- Right line -->
+  <line x1="240" y1="20" x2="390" y2="20" class="line"/>
+</svg>

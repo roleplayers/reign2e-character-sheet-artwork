@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="500" viewBox="0 0 200 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .body-outline { fill: none; stroke: #2c1810; stroke-width: 2; }
+      .hit-zone { fill: rgba(90, 97, 105, 0.1); stroke: #5a6169; stroke-width: 1; stroke-dasharray: 3,3; }
+      .zone-label { font-family: 'Georgia', serif; font-size: 14px; font-weight: bold; fill: #2c1810; }
+      .zone-number { font-family: 'Georgia', serif; font-size: 12px; fill: #8b0000; font-weight: bold; }
+    </style>
+  </defs>
+  
+  <!-- HEAD (10) -->
+  <ellipse cx="100" cy="40" rx="25" ry="35" class="hit-zone"/>
+  <ellipse cx="100" cy="40" rx="25" ry="35" class="body-outline"/>
+  <text x="100" y="35" text-anchor="middle" class="zone-number">10</text>
+  <text x="100" y="50" text-anchor="middle" class="zone-label">Head</text>
+  
+  <!-- TORSO (7-9) -->
+  <rect x="60" y="75" width="80" height="140" rx="15" class="hit-zone"/>
+  <rect x="60" y="75" width="80" height="140" rx="15" class="body-outline"/>
+  <text x="100" y="135" text-anchor="middle" class="zone-number">7-9</text>
+  <text x="100" y="155" text-anchor="middle" class="zone-label">Torso</text>
+  
+  <!-- RIGHT ARM (5-6) -->
+  <g>
+    <!-- Shoulder -->
+    <circle cx="145" cy="95" r="15" class="hit-zone"/>
+    <!-- Upper arm -->
+    <rect x="137" y="95" width="16" height="60" class="hit-zone"/>
+    <!-- Forearm -->
+    <rect x="135" y="155" width="20" height="60" rx="5" class="hit-zone"/>
+    <!-- Hand -->
+    <ellipse cx="145" cy="220" rx="12" ry="18" class="hit-zone"/>
+    
+    <!-- Outline -->
+    <path d="M 145 80 
+             L 145 95 
+             A 15 15 0 0 1 130 110
+             L 130 155
+             L 128 215
+             A 12 18 0 0 1 145 233
+             A 12 18 0 0 1 162 215
+             L 160 155
+             L 160 110
+             A 15 15 0 0 1 145 95
+             Z" class="body-outline" fill="none"/>
+    
+    <text x="170" y="145" text-anchor="start" class="zone-number">5-6</text>
+    <text x="170" y="160" text-anchor="start" class="zone-label">R.Arm</text>
+  </g>
+  
+  <!-- LEFT ARM (3-4) -->
+  <g>
+    <!-- Shoulder -->
+    <circle cx="55" cy="95" r="15" class="hit-zone"/>
+    <!-- Upper arm -->
+    <rect x="47" y="95" width="16" height="60" class="hit-zone"/>
+    <!-- Forearm -->
+    <rect x="45" y="155" width="20" height="60" rx="5" class="hit-zone"/>
+    <!-- Hand -->
+    <ellipse cx="55" cy="220" rx="12" ry="18" class="hit-zone"/>
+    
+    <!-- Outline -->
+    <path d="M 55 80 
+             L 55 95 
+             A 15 15 0 0 0 70 110
+             L 70 155
+             L 72 215
+             A 12 18 0 0 0 55 233
+             A 12 18 0 0 0 38 215
+             L 40 155
+             L 40 110
+             A 15 15 0 0 0 55 95
+             Z" class="body-outline" fill="none"/>
+    
+    <text x="30" y="145" text-anchor="end" class="zone-number">3-4</text>
+    <text x="30" y="160" text-anchor="end" class="zone-label">L.Arm</text>
+  </g>
+  
+  <!-- RIGHT LEG (2) -->
+  <g>
+    <!-- Thigh -->
+    <rect x="105" y="215" width="30" height="100" rx="10" class="hit-zone"/>
+    <!-- Calf -->
+    <rect x="108" y="315" width="24" height="110" rx="8" class="hit-zone"/>
+    <!-- Foot -->
+    <ellipse cx="120" cy="435" rx="15" ry="10" class="hit-zone"/>
+    
+    <!-- Outline -->
+    <path d="M 105 215
+             Q 105 210, 100 210
+             L 100 215
+             L 108 315
+             L 108 425
+             A 15 10 0 0 0 120 435
+             A 15 10 0 0 0 132 425
+             L 132 315
+             L 135 215
+             L 135 210
+             Q 135 210, 130 210
+             Z" class="body-outline" fill="none"/>
+    
+    <text x="155" y="310" text-anchor="start" class="zone-number">2</text>
+    <text x="155" y="325" text-anchor="start" class="zone-label">R.Leg</text>
+  </g>
+  
+  <!-- LEFT LEG (1) -->
+  <g>
+    <!-- Thigh -->
+    <rect x="65" y="215" width="30" height="100" rx="10" class="hit-zone"/>
+    <!-- Calf -->
+    <rect x="68" y="315" width="24" height="110" rx="8" class="hit-zone"/>
+    <!-- Foot -->
+    <ellipse cx="80" cy="435" rx="15" ry="10" class="hit-zone"/>
+    
+    <!-- Outline -->
+    <path d="M 95 215
+             Q 95 210, 100 210
+             L 100 215
+             L 92 315
+             L 92 425
+             A 15 10 0 0 1 80 435
+             A 15 10 0 0 1 68 425
+             L 68 315
+             L 65 215
+             L 65 210
+             Q 65 210, 70 210
+             Z" class="body-outline" fill="none"/>
+    
+    <text x="45" y="310" text-anchor="end" class="zone-number">1</text>
+    <text x="45" y="325" text-anchor="end" class="zone-label">L.Leg</text>
+  </g>
+  
+  <!-- Neck connection -->
+  <rect x="85" y="70" width="30" height="10" rx="5" class="body-outline"/>
+</svg>

@@ -1,0 +1,274 @@
+/**
+ * Reign 2e Character Sheet - Game of Thrones Theme
+ * Medieval, elegant, readable
+ */
+
+:root {
+  /* Medieval Color Palette */
+  --reign-parchment: #f4e9d8;
+  --reign-dark-brown: #2c1810;
+  --reign-gold: #d4af37;
+  --reign-blood-red: #8b0000;
+  --reign-steel-gray: #5a6169;
+  --reign-dark-green: #2d5016;
+  --reign-leather: #3d2817;
+  
+  /* Functional colors */
+  --reign-bg-primary: #e8dcc4;
+  --reign-bg-secondary: #d4c4aa;
+  --reign-border: #2c1810;
+  --reign-text: #2c1810;
+  --reign-text-muted: #5a4a3a;
+  --reign-accent: #8b0000;
+}
+
+/* Parchment background */
+.reign2e.sheet .window-content {
+  background-color: var(--reign-parchment);
+  background-image: 
+    repeating-linear-gradient(0deg, 
+      transparent, 
+      transparent 2px, 
+      rgba(44, 24, 16, 0.02) 2px, 
+      rgba(44, 24, 16, 0.02) 4px);
+  color: var(--reign-text);
+}
+
+/* Header with leather texture */
+.reign2e.sheet .sheet-header {
+  background: linear-gradient(to bottom, var(--reign-leather), #2a1f15);
+  border-bottom: 3px solid var(--reign-gold);
+  border-top: 2px solid var(--reign-dark-brown);
+  color: var(--reign-parchment);
+  position: relative;
+  padding: 16px 24px;
+}
+
+.reign2e.sheet .sheet-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: var(--reign-gold);
+  opacity: 0.5;
+}
+
+/* Character name */
+.reign2e.sheet .charname input {
+  font-family: 'Cinzel', 'Georgia', serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--reign-parchment);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--reign-gold);
+}
+
+/* Profile image with medieval frame */
+.reign2e.sheet .profile-img {
+  border: 3px solid var(--reign-gold);
+  box-shadow: 
+    0 0 0 2px var(--reign-dark-brown),
+    0 4px 8px rgba(0, 0, 0, 0.5);
+  background: var(--reign-leather);
+}
+
+/* Tabs - scroll style */
+.reign2e.sheet .sheet-tabs {
+  background: linear-gradient(to bottom, var(--reign-bg-secondary), var(--reign-bg-primary));
+  border-bottom: 2px solid var(--reign-dark-brown);
+  padding: 0;
+  margin: 0;
+}
+
+.reign2e.sheet .sheet-tabs .item {
+  font-family: 'Cinzel', 'Georgia', serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 12px 20px;
+  color: var(--reign-text-muted);
+  border-right: 1px solid rgba(44, 24, 16, 0.2);
+  background: transparent;
+}
+
+.reign2e.sheet .sheet-tabs .item.active {
+  color: var(--reign-accent);
+  background: var(--reign-parchment);
+  border-bottom: 3px solid var(--reign-accent);
+  font-weight: bold;
+}
+
+/* Stats - illuminated manuscript style */
+.stat-group {
+  background: var(--reign-bg-primary);
+  border: 2px solid var(--reign-dark-brown);
+  border-radius: 0;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.stat-group::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  height: 1px;
+  background: linear-gradient(to right, 
+    transparent, 
+    var(--reign-gold) 20%, 
+    var(--reign-gold) 80%, 
+    transparent);
+  opacity: 0.3;
+}
+
+.stat-header {
+  background: linear-gradient(135deg, 
+    rgba(139, 0, 0, 0.1), 
+    rgba(212, 175, 55, 0.1));
+  border-bottom: 1px solid var(--reign-dark-brown);
+  font-family: 'Cinzel', 'Georgia', serif;
+}
+
+.stat-name {
+  color: var(--reign-accent);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Skill entries */
+.skill-entry {
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(44, 24, 16, 0.2);
+  transition: all 0.2s;
+}
+
+.skill-entry:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--reign-gold);
+}
+
+.skill-entry.custom-skill {
+  background: rgba(45, 80, 22, 0.1);
+  border-left: 3px solid var(--reign-dark-green);
+}
+
+/* Input fields - scroll style */
+.reign2e.sheet input[type="text"],
+.reign2e.sheet input[type="number"],
+.reign2e.sheet select {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--reign-dark-brown);
+  border-radius: 0;
+  color: var(--reign-text);
+  font-family: 'Georgia', serif;
+}
+
+.reign2e.sheet input:focus,
+.reign2e.sheet select:focus {
+  border-color: var(--reign-gold);
+  box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+}
+
+/* Hit locations with body silhouette */
+.hit-locations {
+  position: relative;
+  background: var(--reign-bg-primary);
+  border: 2px solid var(--reign-dark-brown);
+  padding: 16px;
+}
+
+.hit-locations::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 300px;
+  background-image: url('body-silhouette.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.location-block {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--reign-dark-brown);
+  position: relative;
+  z-index: 1;
+}
+
+.location-name {
+  font-family: 'Cinzel', 'Georgia', serif;
+  color: var(--reign-accent);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Damage boxes */
+.damage-box {
+  border: 2px solid var(--reign-steel-gray);
+  border-radius: 0;
+  background: var(--reign-parchment);
+}
+
+.damage-box.shock {
+  background: rgba(212, 175, 55, 0.6);
+  border-color: var(--reign-gold);
+}
+
+.damage-box.killing {
+  background: rgba(139, 0, 0, 0.6);
+  border-color: var(--reign-blood-red);
+}
+
+/* Buttons - medieval style */
+.reign2e button,
+.reign2e .ore-btn {
+  background: linear-gradient(to bottom, var(--reign-steel-gray), #4a5159);
+  border: 2px solid var(--reign-dark-brown);
+  border-radius: 0;
+  color: var(--reign-parchment);
+  font-family: 'Cinzel', 'Georgia', serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 6px 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.reign2e button:hover,
+.reign2e .ore-btn:hover {
+  background: linear-gradient(to bottom, #6a7179, var(--reign-steel-gray));
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Scrollbars */
+.reign2e.sheet ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.reign2e.sheet ::-webkit-scrollbar-track {
+  background: var(--reign-bg-secondary);
+  border-left: 1px solid var(--reign-dark-brown);
+}
+
+.reign2e.sheet ::-webkit-scrollbar-thumb {
+  background: var(--reign-steel-gray);
+  border: 1px solid var(--reign-dark-brown);
+}
+
+.reign2e.sheet ::-webkit-scrollbar-thumb:hover {
+  background: var(--reign-gold);
+}
